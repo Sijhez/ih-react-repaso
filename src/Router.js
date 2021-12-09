@@ -5,6 +5,10 @@ import Home from './components/Home'
 import CRUD from "./components/CRUD"
 import ForFun from "./components/CRUD/forFun"
 import Layout from "./components/Layout";
+import Countries from './components/Countries'
+import Country from "./components/Country"
+//import data from json
+import data from './countries.json'
 //FUNCIONES
 const Router =() =>{
   
@@ -22,6 +26,10 @@ const Router =() =>{
                     {/* localhost:3000/crud */}
                     <Route path='crud' element={<CRUD />}/>
                     <Route path='forFun' element={<ForFun/>}/>
+                    <Route path='countries' element={<Countries allCountries={data}/>}>
+                      <Route path=':id' element={<Country allCountries={data}/>}/>
+                    </Route>
+
               </Route>
           </Routes>
            
